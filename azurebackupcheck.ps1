@@ -1,0 +1,2 @@
+cd "C:\Program Files\Windows Azure Backup Agent\bin"
+Invoke-Command -ComputerName (Get-Content C:\SqlCheck\arun\testlist.txt) -ScriptBlock {Get-ObJob -previous 1 | Select -expand JobStatus | Select JobState, StartTime} | export-csv C:\test.csv -notypeinformation
